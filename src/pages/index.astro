@@ -1,0 +1,88 @@
+---
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import IconLinkedin from "../icons/IconLinkedin.astro";
+import IconGithub from "../icons/IconGithub.astro";
+import IconEmail from "../icons/IconEmail.astro";
+import IconBriefcase from "../icons/IconBriefcase.astro";
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import IconSandbox from "../icons/IconSandbox.astro";
+import Proyects from "../components/Proyects.astro";
+---
+
+<Layout
+  title="Portfolio de Iván Egido Jiménez - Desarrollador y Programador Web Full Stack"
+  description="Portfolio de Iván Egido Jiménez, desarrollador y programador web Full Stack. Desarrollo de aplicaciones web tanto en el Frontend como en el Backend."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="size-12 mb-4 rounded-full"
+        src="/FotoPerfilPortfolio.jpg"
+        alt="Foto de perfil del Portfolio"
+      />
+
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hola, soy Iván Egido Jiménez
+        <a
+          href="https://www.linkedin.com/in/iván-egido-jiménez-081911290/"
+          target="_blank"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar y con ganas de aprender</Badge>
+        </a>
+      </h1>
+
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-3xl">
+        <span class="opacity-70">
+          Desarrollador con menos de un año de experiencia,
+        </span>
+         con muchas ganas de aprender y mejorar. Soy de Salamanca, España.
+        <span class="text-white-100/90 opacity-100">
+          Desarrollar de aplicaciones web tanto en el Frontend como en el
+          Backend
+        </span>.
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/iván-egido-jiménez-081911290/"
+        >
+          <IconLinkedin class="size-4 md:size-6" />
+           Linkedin
+        </SocialPill>
+        <SocialPill href="https://github.com/ivanovich315">
+          <IconGithub class="size-4 md:size-6" />
+           GitHub
+        </SocialPill>
+        <SocialPill href="https://github.com/ivanovich315">
+          <IconEmail class="size-4 md:size-6" />
+           ivanegido3@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
+        <IconBriefcase class="size-7"/>
+        Experiencia Laboral
+      </h2>
+      <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
+        <IconSandbox class="size-8"/>
+        Proyectos
+      </h2>
+      <Proyects />
+    </SectionContainer>
+  </main>
+ 
+</Layout>
+
+<style></style>

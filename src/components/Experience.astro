@@ -1,0 +1,25 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import type { PropsExperience } from "../models/PropsExperience";
+
+const EXPERIENCE: PropsExperience[] = [
+  {
+    title: "Desarrollador Full Stack",
+    company: "NTT DATA",
+    location: "Salamanca, España",
+    date: "Junio - Presente",
+    description:
+      "Trabajo en la empresa NTT DATA como desarrollador Full Stack, utilizando tecnologías como Java, Spring, Angular, TypeScript, HTML, CSS, SQL, etc.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCE.map((item) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...item} />
+      </li>
+    ))
+  }
+</ol>

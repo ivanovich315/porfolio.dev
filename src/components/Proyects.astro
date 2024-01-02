@@ -1,0 +1,91 @@
+---
+
+const TAGS = {
+  HTML: {
+    name: "HTML",
+    color: "bg-red-500",
+    icon: "https://cdn.svgporn.com/logos/html-5.svg",
+  },
+  CSS: {
+    name: "CSS",
+    color: "bg-blue-500",
+    icon: "https://cdn.svgporn.com/logos/css-3.svg",
+  },
+  JS: {
+    name: "JS",
+    color: "bg-yellow-500",
+    icon: "https://cdn.svgporn.com/logos/javascript.svg",
+  },
+  TS: {
+    name: "TS",
+    color: "bg-blue-500",
+    icon: "https://cdn.svgporn.com/logos/typescript-icon.svg",
+  },
+  Angular: {
+    name: "Angular",
+    color: "bg-red-500",
+    icon: "https://cdn.svgporn.com/logos/angular-icon.svg",
+  },
+  Vue: {
+    name: "Vue",
+    color: "bg-green-500",
+    icon: "https://cdn.svgporn.com/logos/vue.svg",
+  },
+  Java: {
+    name: "Java",
+    color: "bg-red-500",
+    icon: "https://cdn.svgporn.com/logos/java.svg",
+  },
+  Spring: {
+    name: "Spring",
+    color: "bg-green-500",
+    icon: "https://cdn.svgporn.com/logos/spring-icon.svg",
+  },
+  MYSQL: {
+    name: "MYSQL",
+    color: "bg-blue-500",
+    icon: "https://cdn.svgporn.com/logos/mysql.svg",
+  },
+};
+
+const PROYECTS = [
+  {
+    title: "Proyecto 1",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl vitae tincidunt luctus, nunc nisl ultricies nunc",
+    image: "https://picsum.photos/200/300",
+    link: "https://www.google.com",
+    github: "https://www.github.com",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
+  },
+];
+---
+
+{
+  PROYECTS.map(({title, description, tags, image, link, github}) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-balance">{description}</p>
+      <ul class="
+        flex flex-wrap gap-2 
+        mb-4
+      ">
+        {tags.map((tag) => (
+          <li>
+            <span class={`inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 ${tag.color}`}>
+              <img class="w-4 h-4 inline-block mr-2" src={tag.icon} alt={tag.name} />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={description} />
+      <a href={link} target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-4 inline-block">
+        Ver proyecto
+      </a>
+      <a href={github} target="_blank" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded ml-4 mt-4 inline-block">
+        Ver código
+      </a>
+    </article>
+  ))
+}
