@@ -1,4 +1,6 @@
 ---
+import IconGithub from "@/icons/IconGithub.astro";
+import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   HTML: {
@@ -61,31 +63,49 @@ const PROYECTS = [
 ];
 ---
 
-{
-  PROYECTS.map(({title, description, tags, image, link, github}) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-      <p class="text-lg mb-4 text-balance">{description}</p>
-      <ul class="
-        flex flex-wrap gap-2 
-        mb-4
-      ">
-        {tags.map((tag) => (
-          <li>
-            <span class={`inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 ${tag.color}`}>
-              <img class="w-4 h-4 inline-block mr-2" src={tag.icon} alt={tag.name} />
-              {tag.name}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={description} />
-      <a href={link} target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded mt-4 inline-block">
-        Ver proyecto
-      </a>
-      <a href={github} target="_blank" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded ml-4 mt-4 inline-block">
-        Ver código
-      </a>
-    </article>
-  ))
-}
+<section class="flex flex-col gap-y-20">
+  {
+    PROYECTS.map(({ title, description, tags, image, link, github }) => (
+      <article>
+        <h3 class="text-2xl font-semibold text-royal-blue-300 mb-2">{title}</h3>
+        <p class="text-lg mb-4 text-balance">{description}</p>
+        <ul
+          class="
+          flex flex-wrap gap-2 
+          mb-4
+        "
+        >
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 ${tag.color}`}
+              >
+                <img
+                  class="w-4 h-4 inline-block mr-2"
+                  src={tag.icon}
+                  alt={tag.name}
+                />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <img
+          loading="lazy"
+          class="rounded shadow-2xl shadow-white/10"
+          src={image}
+          alt={description}
+        />
+        <footer>
+          <LinkButton link={link} target="_blank">
+            Ver proyecto
+          </LinkButton>
+          <LinkButton link={github} target="_blank">
+            <IconGithub class="w-4 h-4 inline-block mr-2" />
+            Ver código
+          </LinkButton>
+        </footer>
+      </article>
+    ))
+  }
+</section>

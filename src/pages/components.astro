@@ -1,0 +1,29 @@
+---
+import Badge from "@/components/Badge.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import IconLinkedin from "@/icons/IconLinkedin.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Design System - Portfolio"
+  description="El catalogo de componentes de mi portafolio."
+>
+  <SectionContainer class="py-44 pb-32 flex flex-col gap-y-10">
+    <article>
+      <h1>&lt; Badge&gt;</h1>
+
+      <Badge>Disponible para trabajar</Badge>
+    </article>
+    <article class="mb-10">
+      <h1 class="mb-4">&lt Social Pill /&gt;</h1>
+      <div class="flex">
+        <SocialPill href="https://linkedin.com/in/iván-egido-jiménez-081911290">
+          <IconLinkedin class="size-4 md-size-6" />
+          Linkedin
+        </SocialPill>
+      </div>
+    </article>
+  </SectionContainer>
+</Layout>

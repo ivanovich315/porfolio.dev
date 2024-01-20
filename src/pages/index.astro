@@ -1,15 +1,17 @@
 ---
-import Badge from "../components/Badge.astro";
-import SocialPill from "../components/SocialPill.astro";
-import IconLinkedin from "../icons/IconLinkedin.astro";
-import IconGithub from "../icons/IconGithub.astro";
-import IconEmail from "../icons/IconEmail.astro";
-import IconBriefcase from "../icons/IconBriefcase.astro";
-import Layout from "../layouts/Layout.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import IconSandbox from "../icons/IconSandbox.astro";
-import Proyects from "../components/Proyects.astro";
+import Badge from "@/components/Badge.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import IconLinkedin from "@/icons/IconLinkedin.astro";
+import IconGithub from "@/icons/IconGithub.astro";
+import IconEmail from "@/icons/IconEmail.astro";
+import IconBriefcase from "@/icons/IconBriefcase.astro";
+import Layout from "@/layouts/Layout.astro";
+import Experience from "@/components/Experience.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import IconSandbox from "@/icons/IconSandbox.astro";
+import Proyects from "@/components/Proyects.astro";
+import IconProfile from "@/icons/IconProfile.astro";
+import AboutMe from "@/components/AboutMe.astro";
 ---
 
 <Layout
@@ -41,7 +43,7 @@ import Proyects from "../components/Proyects.astro";
         <span class="opacity-70">
           Desarrollador con menos de un año de experiencia,
         </span>
-         con muchas ganas de aprender y mejorar. Soy de Salamanca, España.
+        con muchas ganas de aprender y mejorar. Soy de Salamanca, España.
         <span class="text-white-100/90 opacity-100">
           Desarrollar de aplicaciones web tanto en el Frontend como en el
           Backend
@@ -53,22 +55,22 @@ import Proyects from "../components/Proyects.astro";
           href="https://www.linkedin.com/in/iván-egido-jiménez-081911290/"
         >
           <IconLinkedin class="size-4 md:size-6" />
-           Linkedin
+          Linkedin
         </SocialPill>
         <SocialPill href="https://github.com/ivanovich315">
           <IconGithub class="size-4 md:size-6" />
-           GitHub
+          GitHub
         </SocialPill>
         <SocialPill href="https://github.com/ivanovich315">
           <IconEmail class="size-4 md:size-6" />
-           ivanegido3@gmail.com
+          ivanegido3@gmail.com
         </SocialPill>
       </nav>
     </SectionContainer>
 
     <SectionContainer id="experiencia">
       <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
-        <IconBriefcase class="size-7"/>
+        <IconBriefcase class="size-7" />
         Experiencia Laboral
       </h2>
       <Experience />
@@ -76,13 +78,20 @@ import Proyects from "../components/Proyects.astro";
 
     <SectionContainer id="proyectos">
       <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
-        <IconSandbox class="size-8"/>
+        <IconSandbox class="size-8" />
         Proyectos
       </h2>
       <Proyects />
     </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
+        <IconProfile class="size-7" />
+        Sobre mi
+      </h2>
+      <AboutMe />
+    </SectionContainer>
   </main>
- 
 </Layout>
 
 <style></style>
