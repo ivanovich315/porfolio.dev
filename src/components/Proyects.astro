@@ -2,6 +2,12 @@
 import IconGithub from "@/icons/IconGithub.astro";
 import LinkButton from "./LinkButton.astro";
 
+interface Tag {
+  name: string;
+  color: string;
+  icon: string;
+}
+
 const TAGS = {
   HTML: {
     name: "HTML",
@@ -50,15 +56,18 @@ const TAGS = {
   },
 };
 
-const PROYECTS = [
+interface Proyect {
+  title: string;
+  description?: string;
+  image?: string;
+  link?: string;
+  github?: string;
+  tags?: Array<(typeof TAGS)[keyof typeof TAGS]>;
+}
+
+const PROYECTS: Proyect[] = [
   {
-    title: "Proyecto 1",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, nisl vitae tincidunt luctus, nunc nisl ultricies nunc",
-    image: "https://picsum.photos/200/300",
-    link: "https://www.google.com",
-    github: "https://www.github.com",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
+    title: "Proyectos en curso",
   },
 ];
 ---
@@ -75,20 +84,21 @@ const PROYECTS = [
           mb-4
         "
         >
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 ${tag.color}`}
-              >
-                <img
-                  class="w-4 h-4 inline-block mr-2"
-                  src={tag.icon}
-                  alt={tag.name}
-                />
-                {tag.name}
-              </span>
-            </li>
-          ))}
+          {tags &&
+            tags.map((tag: Tag) => (
+              <li>
+                <span
+                  class={`inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 ${tag.color}`}
+                >
+                  <img
+                    class="w-4 h-4 inline-block mr-2"
+                    src={tag.icon}
+                    alt={tag.name}
+                  />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
         </ul>
         <img
           loading="lazy"
@@ -96,15 +106,6 @@ const PROYECTS = [
           src={image}
           alt={description}
         />
-        <footer>
-          <LinkButton link={link} target="_blank">
-            Ver proyecto
-          </LinkButton>
-          <LinkButton link={github} target="_blank">
-            <IconGithub class="w-4 h-4 inline-block mr-2" />
-            Ver código
-          </LinkButton>
-        </footer>
       </article>
     ))
   }
