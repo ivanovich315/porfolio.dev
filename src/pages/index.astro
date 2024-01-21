@@ -12,6 +12,7 @@ import IconSandbox from "@/icons/IconSandbox.astro";
 import Proyects from "@/components/Proyects.astro";
 import IconProfile from "@/icons/IconProfile.astro";
 import AboutMe from "@/components/AboutMe.astro";
+import SubTittle from "@/components/SubTittle.astro";
 ---
 
 <Layout
@@ -69,27 +70,33 @@ import AboutMe from "@/components/AboutMe.astro";
     </SectionContainer>
 
     <SectionContainer id="experiencia">
-      <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
-        <IconBriefcase class="size-7" />
-        Experiencia Laboral
-      </h2>
-      <Experience />
+      <article class="pt-10">
+        <SubTittle>
+          <IconBriefcase class="size-7" />
+          Experiencia Laboral
+        </SubTittle>
+        <Experience />
+      </article>
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
-        <IconSandbox class="size-8" />
-        Proyectos
-      </h2>
-      <Proyects />
+      <article class="pt-10">
+        <SubTittle>
+          <IconSandbox class="size-8" />
+          Proyectos
+        </SubTittle>
+        <Proyects />
+      </article>
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">
-      <h2 class="flex items-center gap-x-3 text-3xl font-semibold mb-6">
-        <IconProfile class="size-7" />
-        Sobre mi
-      </h2>
-      <AboutMe />
+      <article class="pt-10">
+        <SubTittle>
+          <IconProfile class="size-7" />
+          Sobre mi
+        </SubTittle>
+        <AboutMe />
+      </article>
     </SectionContainer>
   </main>
 </Layout>
